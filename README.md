@@ -16,9 +16,9 @@ Issues:
 
 Sample output:
 
-![Example of running script](Exampe%20of%20running%20script.png "Example of running script")
+![Example of running script](Example%20of%20running%20script.png "Example of running script")
 * Example of what the running script looks like*
 
-![Example of text message](Exampe%20of%20text%20message.png "Example of text message")
+![Example of text message](Example%20of%20text%20message.png "Example of text message")
 * The output of the above script*
 
