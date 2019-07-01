@@ -1,24 +1,15 @@
 # PRINTIGRAM 
-# 30 June, 2019
+# 1 July 2019
 # Tested for Python 3.7.2 on Windows 10 Pro
-#
-# Need to install: Chrome driver for Selenium from
-# https://sites.google.com/a/chromium.org/chromedriver/. 
-# 'chromedriver.exe' needs to be in the Python working directory.
+# The programme only works on Windows; need to change font to work on other OS.
 
-# The programme only works on Windows; need to change font/webdriver to work on other OS.
-
-# Imports. Pil for images, os for paths and file management, selenium for web browser usage.
+# Imports. Pil for images, os for paths and file management, printipigeon to sent pictures to printi.
 from PIL import Image, ImageDraw, ImageFont
 import os
-from selenium import webdriver
+import printipigeon as pp
 
 # Change directory to where you have stored chromedriver.exe
 os.chdir("C:/Users/Merlijn Kersten/Documents/Code/Printigram")
-
-# Make Chrome headless (invisible)
-options = webdriver.ChromeOptions()
-options.add_argument('headless')
 
 # The Printigram function
 def printigram(inputtext):                                                      
@@ -36,11 +27,8 @@ def printigram(inputtext):
     for i in range(len(lines)):
         ImageDraw.Draw(img).text((0,i*50), lines[i], font=fnt, fill=(0,0,0))    # Write lines in black text.
     img.save('text.png')
-    #driver = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)   # Open Chrome
-    #driver.get(url)                                                                         # Open correct Printi url
-    #driver.find_element_by_name('filepicker').send_keys('text.png')                         # Upload image
-    #driver.quit()                                                                           # Quit driver
-    #os.remove('text.png')                                                                   # Remove image
+    pp.send_from_path('text.png', printiname)                                      # Use Printi Pigeon to sent pictures to correct printer                                                                        # Quit driver
+    os.remove('text.png')                                                       # Remove image
 
 # Script to determine whether one of the words is too long to print. 
 def findlengths(inputtext):
@@ -60,11 +48,11 @@ printi = input(' Which printi? Type F (Fons) or M (/mango): ')
 while printi not in ['F', 'M', 'f', 'm']:   # Make sure that a Printi is chosen
     printi = input('\n Whoops! Try again. Type F (Fons) or M (/mango): ')
 if printi == 'F' or printi == 'f':
-    url = 'https://printi.me'
+    printiname = 'printi'
     width = 576                             # Width in pixels
     maxlength = 25                          # Maximum number of characters that fit on one line
 else:
-    url = 'https://printi.me/mango'
+    printiname = 'mango'
     width = 384                             # Width in pixels
     maxlength = 16                          # Maximum number of characters that fit on one line
 # If new Printi comes online: simply add its details and key above.
