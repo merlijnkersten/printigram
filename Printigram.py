@@ -9,7 +9,7 @@ import os
 import printipigeon as pp
 
 # Change directory to where you have stored chromedriver.exe
-os.chdir("C:/Users/Merlijn Kersten/Documents/Code/Printigram")
+os.chdir("C:/Users/Merlijn Kersten/Documents/Github/Printigram")
 
 # The Printigram function
 def printigram(inputtext):                                                      
