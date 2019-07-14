@@ -5,11 +5,7 @@
 
 # Imports. Pil for images, os for paths and file management, printipigeon to sent pictures to printi.
 from PIL import Image, ImageDraw, ImageFont
-import os
 import printipigeon as pp
-
-# Change directory to where you have stored chromedriver.exe
-os.chdir("C:/Users/Merlijn Kersten/Documents/Github/Printigram")
 
 # The Printigram function
 def printigram(inputtext):                                                      
