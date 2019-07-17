@@ -6,6 +6,7 @@
 # Imports. Pil for images, os for paths and file management, printipigeon to sent pictures to printi.
 from PIL import Image, ImageDraw, ImageFont
 import printipigeon as pp
+import os
 
 # The Printigram function
 def printigram(inputtext):                                                      
