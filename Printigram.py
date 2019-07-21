@@ -1,5 +1,5 @@
 # PRINTIGRAM 
-# 1 July 2019
+# 16 July 2019
 # Tested for Python 3.7.2 on Windows 10 Pro
 # The programme only works on Windows; need to change font to work on other OS.
 
@@ -7,9 +7,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 import printipigeon as pp
-
-# Change directory to where you have stored chromedriver.exe
-os.chdir("C:/Users/Merlijn Kersten/Documents/Github/Printigram")
 
 # The Printigram function
 def printigram(inputtext):                                                      
