@@ -41,13 +41,17 @@ print('\n PRINTIGRAM')
 print(' Type "QUIT" to exit \n')
 
 # Ask whether to send messages to printi.me or printi.me/mango (different address and different widths)
-printi = input(' Which printi? Type F (Fons) or M (/mango): ')
-while printi not in ['F', 'M', 'f', 'm']:   # Make sure that a Printi is chosen
-    printi = input('\n Whoops! Try again. Type F (Fons) or M (/mango): ')
+printi = input(' Which printi? Type F (Fons), L (/luka) or M (/mango): ')
+while printi not in ['F', 'f', 'L', 'l', 'M', 'm']:   # Make sure that a Printi is chosen
+    printi = input('\n Whoops! Try again. Type F (Fons), L (/luka) or M (/mango): ')
 if printi == 'F' or printi == 'f':
     printiname = 'printi'
     width = 576                             # Width in pixels
     maxlength = 25                          # Maximum number of characters that fit on one line
+elif printi == 'L' or printi == 'l':
+    printiname = 'luka'
+    width = 384
+    maxlength = 16
 else:
     printiname = 'mango'
     width = 384                             # Width in pixels
