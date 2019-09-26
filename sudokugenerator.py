@@ -9,6 +9,9 @@ from PIL import Image, ImageDraw, ImageFont
 import printipigeon as pp
 import os
 
+print(' SUDOKU GENERATOR')
+difficulty = int(input(' Difficulty (0-10)? '))
+
 #os.chdir('C:/Users/Merlijn Kersten/Documents/GitHub/printigram') #For testing
 
 #Code by Alain T. at https://stackoverflow.com/questions/45471152/how-to-create-a-sudoku-puzzle-in-python
@@ -23,7 +26,7 @@ squares = side*side
 
 ########################################################
 #Adjust difficulty. 1: solved, 0: empty, 4//7: default #
-empties = squares * 4//7                               #
+empties = squares * difficulty//10                     #
 ########################################################
 
 for p in sample(range(squares),empties):
